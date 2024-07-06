@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import { ZoomIn, ZoomOut } from "lucide-react";
 import BaliMapjpg from "@/public/Carte-de-Bali.jpg";
 import Image from "next/image";
 
@@ -117,7 +116,7 @@ const Home = () => {
                 transform={`translate(${marker.x},${marker.y})`}
               >
                 <circle
-                  r={10 / transform.scale}
+                  r={5 / transform.scale}
                   fill="purple"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -129,7 +128,7 @@ const Home = () => {
                   dy=".3em"
                   textAnchor="middle"
                   fill="white"
-                  fontSize={10 / transform.scale}
+                  fontSize={5 / transform.scale}
                 >
                   {index + 1}
                 </text>
