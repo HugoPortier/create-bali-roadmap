@@ -104,7 +104,7 @@ const Home = () => {
                   x2={marker.x}
                   y2={marker.y}
                   stroke="blue"
-                  strokeWidth={2 / transform.scale}
+                  strokeWidth={1 / transform.scale}
                 />
               );
             })}
