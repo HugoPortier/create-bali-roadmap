@@ -80,7 +80,7 @@ const Home = () => {
       </button>
       <div
         ref={containerRef}
-        className="relative w-full h-[75vh] overflow-hidden touch-none"
+        className="relative w-full h-screen overflow-hidden"
         onClick={handleClick}
         onWheel={handleWheel}
         onMouseDown={handleMouseDown}
