@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import BaliMap from "@/public/Carte-de-Bali.svg";
+import { ZoomIn, ZoomOut } from "lucide-react";
 import BaliMapjpg from "@/public/Carte-de-Bali.jpg";
 import Image from "next/image";
 
@@ -59,11 +59,25 @@ const Home = () => {
     };
   }, [isDragging, startPosition]);
 
+  const changeZoom = (delta) => {
+    setTransform((prevTransform) => {
+      const newScale = Math.max(1, Math.min(5, prevTransform.scale + delta));
+      return { ...prevTransform, scale: newScale };
+    });
+  };
+
   return (
     <div className="p-4 m-4 bg-orange-500">
       <h1 className="text-2xl font-bold mb-4">
         Planificateur de voyage à Bali
       </h1>
+
+      <button onClick={() => changeZoom(0.1)}>
+        <ZoomIn size={48} />
+      </button>
+      <button onClick={() => changeZoom(-0.1)}>
+        <ZoomOut size={48} />
+      </button>
       <div
         ref={containerRef}
         className="relative w-full h-[75vh] overflow-hidden touch-none"
