@@ -71,13 +71,6 @@ const Home = () => {
       <h1 className="text-2xl font-bold mb-4">
         Planificateur de voyage à Bali
       </h1>
-
-      <button onClick={() => changeZoom(0.1)}>
-        <ZoomIn size={48} />
-      </button>
-      <button onClick={() => changeZoom(-0.1)}>
-        <ZoomOut size={48} />
-      </button>
       <div
         ref={containerRef}
         className="relative w-full h-screen overflow-hidden"
